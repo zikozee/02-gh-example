@@ -4,12 +4,13 @@ on: [push, workflow_dispatch]
 jobs:
   # notice that jobs run in parallel by default
   test:
+    # runners also called agents
     runs-on: ubuntu-latest
     steps:
       - name: Download code from Repo to server
         # for simple command or script, **run** is the goto
-        # actions performs some complex stuff which we would need some stepe or script do
-        # see market palce for actions
+        # actions performs some complex stuff which we would need some steps or script do
+        # see market place for action see : https://github.com/marketplace
         # for actions that takes in additional config, ***with*** e.g submodules:
         uses: actions/checkout@v4
         with:
@@ -18,7 +19,7 @@ jobs:
 
       # not the os you select already contains preinstalled software see: https://github.com/actions/runner-images?tab=readme-ov-file#available-images
       # click each os to see preinstalled software
-      # to manually install software type "github action install <app>" in google e.g github action install java
+      # to manually install software type "Github action install <app>" in google e.g github action install java
       - name: Install Node Js
         uses: actions/setup-node@v3
         with:
