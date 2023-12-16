@@ -1,4 +1,5 @@
 name: Test Project
+# using multiple events,  check history to see single usage
 on: [push, workflow_dispatch]
 jobs:
   # notice that jobs run in parallel by default

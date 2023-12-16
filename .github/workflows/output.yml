@@ -1,0 +1,12 @@
+name: Output Information
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      # outputting Github contexts See: https://docs.github.com/en/actions/learn-github-actions/contexts
+      # to pull in secret set in Github, we could use : ${{ secrets.<secret_name> }}  see: https://docs.github.com/en/actions/learn-github-actions/contexts#secrets-context
+
+      # to see expression we are using: GithbAction expression/ functions see: https://docs.github.com/en/actions/learn-github-actions/expressions#functions
+      - name: Output Github context
+        run: echo "${{ toJSON(github) }}"
