@@ -29,6 +29,8 @@ jobs:
         run: npm test
 
   deploy:
+    # you can wrap in bracket to depend on multiple [test, testo2]
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Download code from Repo to server
